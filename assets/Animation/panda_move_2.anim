@@ -1,0 +1,94 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "panda_move_2",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.375,
+  "sample": 8,
+  "speed": 2,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "9ec3a978-5564-4907-86ff-456fb99f5112"
+            }
+          },
+          {
+            "frame": 0.125,
+            "value": {
+              "__uuid__": "ac679e2d-25ac-41c9-94fa-d469f4a46ef3"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "602cb839-8c25-440d-af12-6a6f40678012"
+            }
+          },
+          {
+            "frame": 0.375,
+            "value": {
+              "__uuid__": "16d7cc85-f1c9-4816-a9ac-22f6cf16aa66"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "764747a7-314e-49c9-8ff3-67c0b29b2c34"
+            }
+          },
+          {
+            "frame": 0.625,
+            "value": {
+              "__uuid__": "0339c374-d07f-4d9e-b598-0890aae77128"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "984fc839-faaf-413c-812b-9683fadc2162"
+            }
+          },
+          {
+            "frame": 0.875,
+            "value": {
+              "__uuid__": "a17d70cb-ddfc-48b0-8818-037dd703a849"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "f1376a5b-f583-4695-bb12-3997b2077584"
+            }
+          },
+          {
+            "frame": 1.125,
+            "value": {
+              "__uuid__": "103d70e4-7a3c-4e7d-b792-8f829ef5d4c9"
+            }
+          },
+          {
+            "frame": 1.25,
+            "value": {
+              "__uuid__": "fe09cd4d-3733-4e43-b638-51d6192b31dd"
+            }
+          }
+        ]
+      }
+    },
+    "props": {
+      "position": [],
+      "scaleX": [
+        {
+          "frame": 0,
+          "value": 1
+        }
+      ]
+    }
+  },
+  "events": []
+}

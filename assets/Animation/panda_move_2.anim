@@ -5,7 +5,7 @@
   "_rawFiles": null,
   "_duration": 1.375,
   "sample": 8,
-  "speed": 2,
+  "speed": 3,
   "wrapMode": 2,
   "curveData": {
     "comps": {
@@ -81,11 +81,43 @@
       }
     },
     "props": {
-      "position": [],
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            -416,
+            35
+          ]
+        },
+        {
+          "frame": 0.625,
+          "value": [
+            -413,
+            96
+          ]
+        },
+        {
+          "frame": 1.25,
+          "value": [
+            -413,
+            35
+          ]
+        }
+      ],
       "scaleX": [
         {
           "frame": 0,
           "value": 1
+        }
+      ],
+      "y": [
+        {
+          "frame": 0,
+          "value": 35
+        },
+        {
+          "frame": 1.25,
+          "value": 35
         }
       ]
     }

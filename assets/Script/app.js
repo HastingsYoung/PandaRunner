@@ -33,9 +33,9 @@ cc.Class({
                     cp.changeDirection(0);
                     self.bg.getComponent('slate').moveBackward();
                 }
-                // else if(keyCode == 38){
-                //     cp.changeDirection(1);
-                // }
+                else if(keyCode == 38){
+                    cp.changeDirection(1);
+                }
                 else if (keyCode == 39){
                     cp.changeDirection(2);
                     self.bg.getComponent('slate').moveForward();

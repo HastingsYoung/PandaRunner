@@ -31,15 +31,23 @@ cc.Class({
         anim.stop(this.AniName + 3);
     },
     changeDirection(dir){
-        this.getComponent(cc.Animation).play(this.AniName + (dir>6?6:dir));
+        if(dir != 1)
+            this.getComponent(cc.Animation).play(this.AniName + (dir>6?6:dir));
         switch(dir){
             case 0:
                 this.currDir = "LEFT";
                 this.leftSpeed += 50;
                 break;
             case 1:
-                this.currDir = "UP";
                 this.upSpeed += 50;
+                if(this.currDir == "RIGHT"){
+                    this.rightSpeed += 50;
+                    this.getComponent(cc.Animation).play(this.AniName + 1);
+                }
+                else if(this.currDir == "LEFT"){
+                    this.leftSpeed += 50;
+                    this.getComponent(cc.Animation).play(this.AniName + 3);
+                }
                 break;
             case 2:
                 this.currDir = "RIGHT";

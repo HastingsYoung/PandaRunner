@@ -33,20 +33,22 @@ cc.Class({
                     cp.changeDirection(0);
                     self.bg.getComponent('slate').moveBackward();
                 }
-                else if(keyCode == 38){
-                    cp.changeDirection(1);
-                }
+                // else if(keyCode == 38){
+                //     cp.changeDirection(1);
+                // }
                 else if (keyCode == 39){
                     cp.changeDirection(2);
                     self.bg.getComponent('slate').moveForward();
                 }
-                else if (keyCode == 40){
-                    cp.changeDirection(3);
-                }
+                // else if (keyCode == 40){
+                //     cp.changeDirection(3);
+                // }
                 else if(keyCode == 32)
                     cp.changeDirection(4);
-                else if (keyCode == 16)
+                else if (keyCode == 16){
                     cp.changeDirection(5);
+                    self.bg.getComponent('slate').move();
+                }
                 else if (keyCode == 9)
                     cp.changeDirection(6);
             },
@@ -55,7 +57,6 @@ cc.Class({
                 let bg = self.bg.getComponent('slate');
                 bg.stop();
                 pd.stop();
-                
             }
         },this.panda);
     },

@@ -13,7 +13,8 @@ cc.Class({
         // },
         // ...
         Anim_forward:'',
-        Anim_backward:''
+        Anim_backward:'',
+        dir:"RIGHT"
     },
     onCollisionEnter: function (other, self) {
         console.log("COLLISION AT SLATE");
@@ -23,10 +24,25 @@ cc.Class({
         var manager = cc.director.getCollisionManager();
     },
     moveForward(){
+        this.dir = "RIGHT";
         this.getComponent(cc.Animation).play(this.Anim_forward);
     },
     moveBackward(){
+        this.dir = "LEFT";
         this.getComponent(cc.Animation).play(this.Anim_backward);
+    },
+    move(){
+        let self = this;
+        switch(this.dir){
+            case "RIGHT":
+                self.getComponent(cc.Animation).play(self.Anim_forward);
+                break;
+            case "LEFT":
+                self.getComponent(cc.Animation).play(self.Anim_backward);
+                break;
+            default:
+            break;
+        }
     },
     stop(){
         this.getComponent(cc.Animation).stop();

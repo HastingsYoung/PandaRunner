@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "panda_move_4",
+  "_name": "panda_move_6",
   "_objFlags": 0,
   "_rawFiles": null,
   "_duration": 1.25,
@@ -101,6 +101,16 @@
         {
           "frame": 1.25,
           "value": 1
+        }
+      ],
+      "y": [
+        {
+          "frame": 0,
+          "value": 83
+        },
+        {
+          "frame": 1.25,
+          "value": 32
         }
       ]
     }

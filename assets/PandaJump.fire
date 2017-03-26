@@ -262,8 +262,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 86,
-      "y": 58
+      "x": -417,
+      "y": 29
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -406,7 +406,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1920,
+      "width": 3920,
       "height": 300
     },
     "_children": [],
@@ -497,7 +497,8 @@
     },
     "_enabled": true,
     "Anim_forward": "slate_roll_forward",
-    "Anim_backward": "slate_roll_backward"
+    "Anim_backward": "slate_roll_backward",
+    "dir": "RIGHT"
   },
   {
     "__type__": "cc.Canvas",

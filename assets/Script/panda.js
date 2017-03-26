@@ -24,7 +24,11 @@ cc.Class({
         this.rightSpeed = 0;
         this.upSpeed = 0;
         this.downSpeed = 0;
-        this.getComponent(cc.Animation).stop();
+        let anim = this.getComponent(cc.Animation);
+        anim.stop(this.AniName + 0);
+        anim.stop(this.AniName + 1);
+        anim.stop(this.AniName + 2);
+        anim.stop(this.AniName + 3);
     },
     changeDirection(dir){
         this.getComponent(cc.Animation).play(this.AniName + (dir>6?6:dir));
@@ -45,6 +49,11 @@ cc.Class({
                 this.currDir = "DOWN";
                 this.downSpeed += 50;
                 break;
+            case 5:
+                if(this.currDir == "RIGHT")
+                    this.rightSpeed += 200;
+                else if(this.currDir == "LEFT")
+                    this.leftSpeed += 200;
             default:
                 break;
         }

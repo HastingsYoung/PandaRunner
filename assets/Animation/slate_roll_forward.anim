@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "slate_roll",
+  "_name": "slate_roll_forward",
   "_objFlags": 0,
   "_rawFiles": null,
   "_duration": 2.5,
@@ -12,11 +12,11 @@
       "x": [
         {
           "frame": 0,
-          "value": 481
+          "value": 1470
         },
         {
           "frame": 2.5,
-          "value": -479
+          "value": -1470
         }
       ]
     }

@@ -21,15 +21,6 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        let self = this;
-        setInterval(function(){
-            self.moveSlate(Math.floor(Math.random()*9));
-        },1000);
-    },
-
-    moveSlate:function(index){
-        index = (index>8?8:index);
-        this.nodes[index].getComponent(cc.Animation).play(this.AniName + index);
     }
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

@@ -12,6 +12,8 @@ cc.Class({
         //    readonly: false,    // optional, default is false
         // },
         // ...
+        leftSpeed: 0,
+        rightSpeed: 0,
         Anim_forward:'',
         Anim_backward:'',
         dir:"RIGHT"
@@ -25,20 +27,24 @@ cc.Class({
     },
     moveForward(){
         this.dir = "RIGHT";
-        this.getComponent(cc.Animation).play(this.Anim_forward);
+        // this.getComponent(cc.Animation).play(this.Anim_forward);
+        this.rightSpeed += 100;
     },
     moveBackward(){
         this.dir = "LEFT";
-        this.getComponent(cc.Animation).play(this.Anim_backward);
+        // this.getComponent(cc.Animation).play(this.Anim_backward);
+        this.leftSpeed += 100;
     },
     move(){
         let self = this;
         switch(this.dir){
             case "RIGHT":
-                self.getComponent(cc.Animation).play(self.Anim_forward);
+                // self.getComponent(cc.Animation).play(self.Anim_forward);
+                this.rightSpeed += 250;
                 break;
             case "LEFT":
-                self.getComponent(cc.Animation).play(self.Anim_backward);
+                // self.getComponent(cc.Animation).play(self.Anim_backward);
+                this.leftSpeed += 250;
                 break;
             default:
             break;
@@ -46,9 +52,14 @@ cc.Class({
     },
     stop(){
         this.getComponent(cc.Animation).stop();
-    }
+        this.rightSpeed = 0;
+        this.leftSpeed = 0;
+    },
     // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-
-    // },
+    update: function (dt) {
+        if(this.dir == "RIGHT")
+            this.node.x -= this.rightSpeed * dt;
+        else if(this.dir == "LEFT" && this.node.x < 2450)
+            this.node.x += this.leftSpeed * dt;
+    },
 });

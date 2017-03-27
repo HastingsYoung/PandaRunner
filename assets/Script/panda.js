@@ -17,7 +17,15 @@ cc.Class({
         leftSpeed: 0,
         rightSpeed: 0,
         currDir:"LEFT",
-        AniName:''
+        AniName:'',
+        jumpAudio:{
+            default: null,
+            url:cc.AudioClip
+        },
+        growAudio:{
+            default: null,
+            url: cc.AudioClip
+        }
     },
     stop(){
         this.leftSpeed = 0;
@@ -29,6 +37,7 @@ cc.Class({
         anim.stop(this.AniName + 1);
         anim.stop(this.AniName + 2);
         anim.stop(this.AniName + 3);
+        anim.stop(this.AniName + 5);
     },
     changeDirection(dir){
         if(dir != 1)
@@ -36,32 +45,40 @@ cc.Class({
         switch(dir){
             case 0:
                 this.currDir = "LEFT";
-                this.leftSpeed += 50;
+                this.leftSpeed += 100;
                 break;
             case 1:
-                this.upSpeed += 50;
+                this.upSpeed += 500;
                 if(this.currDir == "RIGHT"){
-                    this.rightSpeed += 50;
+                    this.rightSpeed += 200;
                     this.getComponent(cc.Animation).play(this.AniName + 1);
                 }
                 else if(this.currDir == "LEFT"){
-                    this.leftSpeed += 50;
+                    this.leftSpeed += 200;
                     this.getComponent(cc.Animation).play(this.AniName + 3);
                 }
                 break;
             case 2:
                 this.currDir = "RIGHT";
-                this.rightSpeed += 50;
+                this.rightSpeed += 100;
                 break;
             case 3:
                 this.currDir = "DOWN";
-                this.downSpeed += 50;
+                this.downSpeed += 100;
+                break;
+            case 4:
+                cc.audioEngine.play(this.growAudio,false,1);
                 break;
             case 5:
                 if(this.currDir == "RIGHT")
-                    this.rightSpeed += 200;
+                    this.rightSpeed += 250;
                 else if(this.currDir == "LEFT")
-                    this.leftSpeed += 200;
+                    this.leftSpeed += 250;
+                break;
+            case 6:
+                cc.audioEngine.play(this.jumpAudio,false,1);
+                console.log(id);
+                break;
             default:
                 break;
         }
@@ -78,22 +95,23 @@ cc.Class({
     onLoad: function () {
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
-        manager.enabledDebugDraw = true;
-        manager.enabledDrawBoundingBox = true;
+        manager.enabledDebugDraw = false;
+        manager.enabledDrawBoundingBox = false;
     },
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
-        console.log(this.currDir);
         switch(this.currDir){
             case "LEFT":
-                this.node.x -= this.leftSpeed * dt;
+                if(this.node.x>-417)
+                    this.node.x -= this.leftSpeed * dt;
                 break;
             case "UP":
                 this.node.y += this.upSpeed * dt;
                 break;
             case "RIGHT":
-                this.node.x += this.rightSpeed * dt;
+                if(this.node.x<310)
+                    this.node.x += this.rightSpeed * dt;
                 break;
             case "DOWN":
                 this.node.y -= this.downSpeed * dt;

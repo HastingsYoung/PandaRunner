@@ -81,29 +81,7 @@
       }
     },
     "props": {
-      "position": [
-        {
-          "frame": 0,
-          "value": [
-            -416,
-            35
-          ]
-        },
-        {
-          "frame": 0.625,
-          "value": [
-            -413,
-            96
-          ]
-        },
-        {
-          "frame": 1.25,
-          "value": [
-            -413,
-            35
-          ]
-        }
-      ],
+      "position": [],
       "scaleX": [
         {
           "frame": 0,

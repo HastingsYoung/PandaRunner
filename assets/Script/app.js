@@ -19,26 +19,34 @@ cc.Class({
         bg:{
             default:null,
             type:cc.Node
+        },
+        bgAudio:{
+            default:null,
+            url:cc.AudioClip
         }
     },
 
     // use this for initialization
     onLoad: function () {
         let self = this;
+        cc.audioEngine.setEffectsVolume ( 1 );
+        cc.audioEngine.playMusic ( this.bgAudio, true );
         cc.eventManager.addListener({
             event:cc.EventListener.KEYBOARD,
             onKeyPressed: function(keyCode,event){
                 let cp = self.panda.getComponent('panda');
                 if(keyCode == 37){
                     cp.changeDirection(0);
-                    self.bg.getComponent('slate').moveBackward();
+                    let bg = self.bg.getComponent('slate');
+                    bg.moveBackward()
                 }
                 else if(keyCode == 38){
                     cp.changeDirection(1);
                 }
                 else if (keyCode == 39){
                     cp.changeDirection(2);
-                    self.bg.getComponent('slate').moveForward();
+                    let bg = self.bg.getComponent('slate');
+                    bg.moveForward();
                 }
                 // else if (keyCode == 40){
                 //     cp.changeDirection(3);

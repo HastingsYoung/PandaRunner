@@ -24,6 +24,9 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         var manager = cc.director.getCollisionManager();
+        manager.enabled = true;
+        manager.enabledDebugDraw = false;
+        manager.enabledDrawBoundingBox = false;
     },
     moveForward(){
         this.dir = "RIGHT";

@@ -31,7 +31,6 @@ cc.Class({
         this.leftSpeed = 0;
         this.rightSpeed = 0;
         this.upSpeed = 0;
-        this.downSpeed = 0;
         let anim = this.getComponent(cc.Animation);
         anim.stop(this.AniName + 0);
         anim.stop(this.AniName + 1);
@@ -77,7 +76,8 @@ cc.Class({
                 break;
             case 6:
                 cc.audioEngine.play(this.jumpAudio,false,1);
-                console.log(id);
+                if(this.upSpeed < 700) 
+                    this.upSpeed = 700;
                 break;
             default:
                 break;
@@ -89,7 +89,11 @@ cc.Class({
         let world = self.world;
     },
     onCollisionStay: function (other, self) {
-        this.stop();
+        this.downSpeed = 0;
+    },
+    onCollisionExit:function (other, self){
+        console.log("EXIT COLLIDE");
+        this.downSpeed += 400;
     },
     // use this for initialization
     onLoad: function () {
@@ -101,6 +105,7 @@ cc.Class({
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
+        this.node.y -= this.downSpeed * dt;
         switch(this.currDir){
             case "LEFT":
                 if(this.node.x>-417)
@@ -112,9 +117,6 @@ cc.Class({
             case "RIGHT":
                 if(this.node.x<310)
                     this.node.x += this.rightSpeed * dt;
-                break;
-            case "DOWN":
-                this.node.y -= this.downSpeed * dt;
                 break;
             default:
                 break;

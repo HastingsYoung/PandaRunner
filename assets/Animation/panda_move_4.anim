@@ -77,10 +77,6 @@
           "curve": "quadOut"
         },
         {
-          "frame": 0.625,
-          "value": 212
-        },
-        {
           "frame": 1.125,
           "value": 37
         }
